@@ -1,3 +1,4 @@
+import Footer from "./components/share/Footer"
 import Header from "./components/share/Header"
 
 function App() {
@@ -5,6 +6,7 @@ function App() {
   return (
     <>
       <Header />
+      <Footer />
     </>
   )
 }
