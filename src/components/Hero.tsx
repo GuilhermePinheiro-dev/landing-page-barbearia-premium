@@ -1,6 +1,6 @@
 import heroBackground from '../assets/hero-barbershop.jpg'
 
-const HeroPage = () => {
+export const HeroPage = () => {
     // export function Hero() {
     //     const scrolltoSection = (id: string) => {
     //         const element = document.getElementById(id)
@@ -49,4 +49,3 @@ const HeroPage = () => {
         );
     }
 
-export default HeroPage;
