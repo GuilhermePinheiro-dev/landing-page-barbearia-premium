@@ -1,6 +1,6 @@
 import { Scissors, User, Package, Eye, Palette, Footprints } from "lucide-react";
 import { ServiceCard } from "./ServiceCard";
-import { Button } from "./Button";
+import { Button } from "./share/Button";
 
 
 
@@ -45,7 +45,7 @@ const services = [
 
 export const Services = () => {
     return (
-        <section className="py-16 lg:py-24 bg-[#0a0a0a]">
+        <section id="services" className="py-16 lg:py-24 bg-[#0a0a0a]">
             <div className="max-w-360 mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center">
                     <h2 className="text-white mb-8">Serviços</h2>
@@ -66,7 +66,6 @@ export const Services = () => {
                 <div className="flex justify-center items-center pt-8">
                     <Button
                     variant="primary"
-
                     onClick={
                         () => window.open('https://wa.me/5511999999999', '_blank')
                     }>
