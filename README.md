@@ -1,73 +1,88 @@
-# React + TypeScript + Vite
+# Barbearia Premium - Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Landing page responsiva para barbearia premium desenvolvida com React, TypeScript, Vite e Tailwind CSS.
 
-Currently, two official plugins are available:
+## Visão geral
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Este projeto entrega uma página estática moderna com:
 
-## React Compiler
+- Header fixo e responsivo com menu mobile
+- Seção hero com chamada para ação
+- Cards de serviços com preços
+- Seção de contato com informações e botão de WhatsApp
+- Footer com links externos para Instagram, WhatsApp e localização
+- Estilo escuro com detalhes em dourado
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Stack
 
-## Expanding the ESLint configuration
+- React 19
+- TypeScript 6
+- Vite
+- Tailwind CSS 4
+- `@tailwindcss/vite`
+- `lucide-react` para ícones
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Scripts principais
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- `npm install` – instala dependências
+- `npm run dev` – inicia o servidor de desenvolvimento
+- `npm run build` – gera a versão de produção
+- `npm run lint` – executa o ESLint no projeto
+- `npm run preview` – pré-visualiza o build
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Estrutura do projeto
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- `index.html` – entrada HTML padrão do Vite
+- `src/main.tsx` – bootstrap da aplicação React
+- `src/App.tsx` – composição das seções principais
+- `src/styles/globals.css` – import Tailwind e definição de tema
+- `src/components/` – componentes de UI da landing page
+  - `Header.tsx` – navegação fixa e responsiva
+  - `Hero.tsx` – seção de destaque com CTA
+  - `Services.tsx` – grade de serviços
+  - `ServiceCard.tsx` – cartão individual de serviço
+  - `Contact.tsx` – informações e botão de contato
+  - `share/` – componentes reutilizáveis
+    - `Button.tsx` – botão estilizado
+    - `Footer.tsx` – rodapé com links sociais
+
+## Como rodar localmente
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Abra o endereço exibido no terminal para ver a aplicação.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Como construir para produção
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
+
+Após o build, a pasta `dist/` conterá os arquivos prontos para deploy.
+
+## Detalhes importantes
+
+- O projeto usa `@tailwindcss/vite` para processar Tailwind no Vite.
+- O CSS global importa Tailwind diretamente e adiciona a variável `--color-yellow-primary`.
+- O Header possui comportamento responsivo com menu mobile e `backdrop-blur`.
+- O botão principal reutiliza o componente `Button` com variantes de estilo.
+
+## Customização
+
+Você pode personalizar facilmente:
+
+- `src/assets/logo-barbearia.jpg` e `src/assets/hero-barbershop.jpg` para imagens próprias
+- textos das seções `Hero`, `Services` e `Contact`
+- URLs do WhatsApp e redes sociais no `Footer`
+
+## Notas
+
+- A navegação interna usa ancora por ID, facilitando seções únicas na mesma página.
+- O layout já está preparado para desktop e mobile, com grade adaptativa em `Services`.
+
+---
+
+Desenvolvido como landing page de barbearia premium usando boas práticas de UI e responsividade.
